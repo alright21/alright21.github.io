@@ -1,0 +1,47 @@
+baseURL = 'https://alright21.github.io'
+languageCode = 'en-us'
+title = 'Alberto Giust'
+theme = 'cactus'
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Blog"
+url = "/blog"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[params]
+
+    colortheme = "dark"
+    rss = true
+
+    # Main Page
+    description = "Hi, I am Alberto Giust, aka `alright(21)?`, penetration tester at Spike Reply and security enthusiast. In this website you will find CTF writeups and other interesting things I want to document about my journey through the magical world of Cybersecurity."
+    mainSection = "blog"
+    showAllPostsOnHomePage = false
+    postsOnHomePage = 10
+    tagsOverview = false
+
+    [[params.social]]
+        name = "github"
+        link = "https://github.com/alright21"
+    [[params.social]]
+        name = "email"
+        link = "alberto.giust21@gmai.com"
+    [[params.social]]
+        name = "linkedin"
+        link = "https://www.linkedin.com/in/alberto-giust/"
+    [[params.social]]
+        name = "twitter"
+        link = "https://twitter.com/alright2121"
+
+    [params.comments]
+        enabled = true
