@@ -1,11 +1,11 @@
 ---
 title: "Mobile Security Introduction"
-date: 2023-03-01T11:00:00+02:00
+date: 2023-07-23T18:00:00+02:00
 draft: false
 ---
 
 # Mobile Security Introduction
-
+This is quite a while I wanted to upload this article, and now I found the courage to do so. If you find some inconsistencies, I am always open to feedback. I will try to update it, keeping it as a "mobile security introduction garden". Have fun:)
 ## Setup
 
 Every mobile assessment requires some different setup compared to web applications. In this guide, we will explain how to enter the beatiful world of mobile security, and not feel overwhelmed by do so.

@@ -44,4 +44,4 @@ weight = 3
         link = "https://twitter.com/alright2121"
 
     [params.comments]
-        enabled = true
+        enabled = false
