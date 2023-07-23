@@ -5,7 +5,7 @@ draft: false
 ---
 
 # Mobile Security Introduction
-This is quite a while I wanted to upload this article, and now I found the courage to do so. If you find some inconsistencies, I am always open to feedback. I will try to update it, keeping it as a "mobile security introduction garden". Have fun:)
+After quite a while, I finally decided to upload this article, and now I have found the courage to do so. If you come across any inconsistencies, I am always open to feedback. I will continuously update it, aiming to create a comprehensive 'mobile security introduction garden.' Have fun reading! :)
 ## Setup
 
 Every mobile assessment requires some different setup compared to web applications. In this guide, we will explain how to enter the beatiful world of mobile security, and not feel overwhelmed by do so.
