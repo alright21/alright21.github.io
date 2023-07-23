@@ -35,7 +35,7 @@ weight = 3
         link = "https://github.com/alright21"
     [[params.social]]
         name = "email"
-        link = "alberto.giust21@gmai.com"
+        link = "alberto.giust21@gmail.com"
     [[params.social]]
         name = "linkedin"
         link = "https://www.linkedin.com/in/alberto-giust/"
