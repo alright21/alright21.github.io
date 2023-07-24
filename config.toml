@@ -45,3 +45,8 @@ weight = 3
 
     [params.comments]
         enabled = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
