@@ -1,10 +1,10 @@
 ---
-title: "Mobile Flutter Applications"
-date: 2023-07-24T08:50:38+02:00
-draft: true
+title: "Intercepting Traffic in Mobile Flutter Applications"
+date: 2023-08-01T08:50:38+02:00
+draft: false
 ---
 
-# Flutter Apps
+# Intercepting Traffic in Mobile Flutter Applications
 
 During our tests, it may happen that we have to find vulnerabilities in applications built with the Flutter framework. It is pretty common when we have both Android and iOS apps. This framework raises some problems when we need to intercept traffic for two reasons:
 1. flutter apps are proxy unaware - if we add a proxy listener from the settings of our phone, the application will ignore it
@@ -14,9 +14,12 @@ Below are explained the solutions for Android and iOS. For iOS, I will explain t
 that the researchers from [nviso](https://www.nviso.eu/) suggest in their articles (Android[1] and iOS[2]) and article. They have full credit over this, I will add some comments on what was not immediately clear to me:)
 
 ## Android
-The general solution for Android applications is to tinker with `iptables`. As a result, all the traffic will be forwarded based on the rules we set. If we add a forwarding rule to our proxy, it's game over :) But, how can we do it? The solution we found is Proxydroid!
-Proxydroid is an Android application that requires root privileges and modifies the IP routes in order to forward all the traffic to our desired IP address.
+The general solution for Android applications is to tinker with `iptables`. As a result, all the traffic will be forwarded based on the rules we set. If we add a forwarding rule to our proxy, it's game over :) But, how can we do it? The solution we found is ProxyDroid!
+
+ProxyDroid is an Android application that requires root privileges and modifies the IP routes in order to forward all the traffic to our desired IP address.
+
 We can download Proxydroid from the Play Store. Remember that we need to have a rooted device to be able to run it. 
+
 Here is the complete procedure to set up our proxying rules:
 1. download the application from the Play Store (`org.proxydroid`) and install it
 2. open the application and modify the parameters as shown in the Figure below. Add your laptop/PC IP address, and an available port (e.g. `8087`), and set the Proxy type to HTTP
@@ -29,8 +32,10 @@ Here is the complete procedure to set up our proxying rules:
 4. Frida to the rescue! We can use this tool to bypass SSL pinning. We can download the script below, and spawn the application with `frida -U -f com.package.name -l script_name.js`
 	- https://raw.githubusercontent.com/NVISOsecurity/disable-flutter-tls-verification/main/disable-flutter-tls.js
 5. Now we should be able to intercept all the traffic or your Flutter application:)
+
 ## iOS
 In iOS devices, we don't have any"ProxyDroid" like applications, so we need to find a different solution. As written in the article cited above, we can set up a wifi hotspot network or use OpenVPN to tunnel all the traffic through our proxy. I will explain the second solution since it is the only one I tried and worked for me (and it is probably the easiest one).
+
 Here are the steps required to set up the VPN and start intercepting the traffic
 1. install the OpenVPN client on your iOS device (from the App Store)
 2. download in your PC the script below, and set it up to be executable (from a Linux terminal)
@@ -98,10 +103,12 @@ sudo iptables -t nat -A POSTROUTING -s <IP_SUBNET> -o eth0 -j MASQUERADE
 ```
 
 The route forwarding rules should be set by now, and we should be able to intercept the traffic of our beloved application. If you do not see any traffic, and the application seems that it is not working, the SSL pinning guards have been probably called for help.
+
 We can bypass using the same frida script used before (it checks if we are working with Android or iOS) and start it with `frida -U -f com.package.name -l script_name.js`
 - https://raw.githubusercontent.com/NVISOsecurity/disable-flutter-tls-verification/main/disable-flutter-tls.js
 
 **Note**: when you need to reset your configuration (e.g. change the OpenVPN configuration), the only possibility I found is to remove OpenVPN (command `4`) and reinstall it again. This can mess up your OpenVPN already installed (at least in my Ubuntu machine).
+
 To fix it, you can reinstall it with `sudo apt-get install openvpn network-manager-openvpn network-manager-openvpn-gnome`
 
 
@@ -109,4 +116,5 @@ And that's all! If you have any questions, let me know:)
 
 # References
 [1] https://blog.nviso.eu/2022/08/18/intercept-flutter-traffic-on-ios-and-android-http-https-dio-pinning/
+
 [2] https://blog.nviso.eu/2020/06/12/intercepting-flutter-traffic-on-ios/
