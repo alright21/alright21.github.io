@@ -1,7 +1,7 @@
 ---
-title: "About"
+title: "About me"
 date: 2023-09-08T15:39:23+02:00
-draft: true
+draft: false
 ---
 
 ### Hi there 👋
