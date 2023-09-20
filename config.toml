@@ -9,14 +9,20 @@ url = "/"
 weight = 1
 
 [[menu.main]]
-name = "Blog"
+name = "Writings"
 url = "/blog"
 weight = 2
 
 [[menu.main]]
+name = "CTFs"
+url = "/ctf"
+weight = 3
+
+[[menu.main]]
 name = "About"
 url = "/about"
-weight = 3
+weight = 4
+
 
 [params]
 
