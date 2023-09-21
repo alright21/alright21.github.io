@@ -9,7 +9,7 @@ url = "/"
 weight = 1
 
 [[menu.main]]
-name = "Writings"
+name = "Blog"
 url = "/blog"
 weight = 2
 
@@ -31,9 +31,8 @@ weight = 4
 
     # Main Page
     description = "Hi, I am Alberto Giust, aka `alright(21)?`, penetration tester at Spike Reply and security enthusiast. In this website you will find CTF writeups and other interesting things I want to document about my journey through the magical world of Cybersecurity."
-    mainSection = "blog"
-    showAllPostsOnHomePage = false
-    postsOnHomePage = 10
+    mainSections = ["blog","ctf"]
+    showAllPostsOnHomePage = true
     tagsOverview = false
 
     [[params.social]]

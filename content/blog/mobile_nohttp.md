@@ -2,6 +2,7 @@
 title: "Intercepting Non-HTTP Traffic in Android"
 date: 2023-09-06T12:25:03+02:00
 draft: false
+categories: blog
 ---
 
 # Intercepting Non-HTTP Traffic in Android

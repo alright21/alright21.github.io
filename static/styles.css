@@ -1,0 +1,13 @@
+figcaption{
+    text-align: center;
+}
+
+.category-span{
+    display: inline-block;
+    border: 1px solid #4885FF; /* Border color */
+    border-radius: 12px; /* Rounded corners */
+    color: #4885FF; /* Text color */
+    background: transparent; /* Transparent background */
+    text-align: center; /* Center text horizontally */
+    width: 60px;
+}

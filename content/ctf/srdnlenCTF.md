@@ -2,6 +2,7 @@
 title: "SrdnlenCTF"
 date: 2022-10-12T23:08:58+02:00
 draft: false
+categories: ctf
 ---
 
 # SrdnlenCTF

@@ -2,6 +2,7 @@
 title: "Intercepting Traffic in Mobile Flutter Applications"
 date: 2023-08-01T08:50:38+02:00
 draft: false
+categories: blog
 ---
 
 # Intercepting Traffic in Mobile Flutter Applications
