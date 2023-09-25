@@ -2,6 +2,7 @@ baseURL = 'https://alright21.github.io'
 languageCode = 'en-us'
 title = 'Alberto Giust'
 theme = 'hugo-theme-cactus'
+googleAnalytics = 'G-7KVTDGPL67'
 
 [[menu.main]]
 name = "Home"
