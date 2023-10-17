@@ -34,13 +34,13 @@ The application has two activities: MainActivity, where nothing happens, and a F
   <figcaption>FlagSender activity sets the result value to the flag</figcaption>
 </figure>
 
-I decided to use Android new approach to development: Kotlin and Jetpack Compose because it is a bit different (more on that in future blog posts). The idea is the following:
+I decided to use Android's new development framework: Kotlin with Jetpack Compose. The idea to exploit the application is the following:
 1. create an activity with a button that redirects the user to the FlagSender activity
 2. prepare a listener on the result received when the FlagSender activity is closed
 3. catch the result, parse the result code and get the data
 4. display the data in the app (or in my case, copy it to the clipboard)
 
-The following code is what is necessary in the malicious application to work properly.
+The following code is what it is necessary in the malicious application to work properly.
 
 **MainActivity.kt**
 
