@@ -18,8 +18,8 @@ Write-ups for [TCP1P](https://ctf.tcp1p.com/) CTF 2023.
 |   Mobile  |      356     |     13     |
 
 #### Challenge Description
-<figure>
-  <img src="/assets/tcp1p_intention_description.png" alt="intention description" style="width:60%">
+<figure style="margin-left: 0px;">
+  <img src="/assets/tcp1p_intention_description.png" alt="intention description" style="width:60%; float: left">
   <figcaption></figcaption>
 </figure>
 

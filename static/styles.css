@@ -11,3 +11,8 @@ figcaption{
     text-align: center; /* Center text horizontally */
     width: 60px;
 }
+
+p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
