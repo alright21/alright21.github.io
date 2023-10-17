@@ -29,6 +29,11 @@ The challenge presents an interesting setup compared to regular mobile challenge
 
 The application has two activities: MainActivity, where nothing happens, and a FlagSender, where the content of `flag.txt` file is set as an intent result and sent back to the caller. The AndroidManifest.xml also suggests what should be the approach of exploiting this challenge: FlagSender activity is exported, so we are able to start it from an external application, and retrieve the intent result (set with `setResult(-1, getIntent().putExtra("flag", flag));`). We have everything we need in theory, but we need to create a malicious application to install in the emulator in order to exploit it.
 
+<figure>
+  <img src="/assets/tcp1p_intention_flagSender.png" alt="intention flagSender" style="width:100%">
+  <figcaption>FlagSender activity sets the result value to the flag</figcaption>
+</figure>
+
 I decided to use Android new approach to development: Kotlin and Jetpack Compose because it is a bit different (more on that in future blog posts). The idea is the following:
 1. create an activity with a button that redirects the user to the FlagSender activity
 2. prepare a listener on the result received when the FlagSender activity is closed
