@@ -24,8 +24,7 @@ jobs:
       - name: Build
         run: hugo \
             --gc \
-            --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
