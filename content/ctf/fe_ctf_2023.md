@@ -1,7 +1,7 @@
 ---
 title: "FE CTF 2023"
-date: 2023-10-27T16:58:25+02:00
-draft: true
+date: 2023-10-30T08:58:25+02:00
+draft: false
 categories: ctf
 ---
 
