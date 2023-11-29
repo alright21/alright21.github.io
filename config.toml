@@ -9,7 +9,7 @@ url = "/"
 weight = 1
 
 [[menu.main]]
-name = "Blog"
+name = "Security Blog"
 url = "/blog"
 weight = 2
 
@@ -19,9 +19,14 @@ url = "/ctf"
 weight = 3
 
 [[menu.main]]
+name = "Education"
+url = "/education"
+weight = 4
+
+[[menu.main]]
 name = "About"
 url = "/about"
-weight = 4
+weight = 5
 
 
 [params]
@@ -31,7 +36,7 @@ weight = 4
 
     # Main Page
     description = "Hi, I am Alberto Giust, aka `alright(21)?`, penetration tester at Spike Reply and security enthusiast. In this website you will find CTF writeups and other interesting things I want to document about my journey through the magical world of Cybersecurity."
-    mainSections = ["blog","ctf"]
+    mainSections = ["blog","ctf","education"]
     showAllPostsOnHomePage = true
     tagsOverview = false
 
