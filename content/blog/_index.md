@@ -5,4 +5,4 @@ draft: false
 categories:
 ---
 
-In this section I will publish my research on security, what I learn and my journey in this magical world! I am now focusing on mobile security, so this will be my main area of study, but I may also add something else, related to security or about my volunteering experience at Coderdojo.
+In this section I will publish my research on security, what I learn and my journey in this magical world! I am now focusing on mobile security, so this will be my main area of study.
