@@ -9,10 +9,25 @@ figcaption{
     color: #4885FF; /* Text color */
     background: transparent; /* Transparent background */
     text-align: center; /* Center text horizontally */
-    width: 60px;
+    width: 80px;
 }
 
 p {
     margin-top: 8px;
     margin-bottom: 8px;
 }
+
+blockquote {
+    /* background-color: aqua; */
+    border-left: 1px solid #666;
+    margin-left: 20px;
+    padding-left: 8px;
+}
+
+h3 {
+    color: #eeeeee;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 2.95em;
+  }
+
