@@ -42,7 +42,7 @@ Here are the steps required to set up the VPN and start intercepting the traffic
 2. download in your PC the script below, and set it up to be executable (from a Linux terminal)
 ```bash
 # download
-wget https://git.io/vpn
+wget https://git.io/vpn -O openvpn-install.sh
 # removes line that makes script crash in Kali
 sed -i "$(($(grep -ni "debian is too old" openvpn-install.sh | cut  -d : -f 1)+1))d" ./openvpn-install.sh
 # make the script executable
@@ -102,6 +102,8 @@ sudo iptables -t nat -A PREROUTING -i tun0 -p tcp --dport 80 -j REDIRECT --to-po
 sudo iptables -t nat -A PREROUTING -i tun0 -p tcp --dport 443 -j REDIRECT --to-port <BURP_PORT>
 sudo iptables -t nat -A POSTROUTING -s <IP_SUBNET> -o eth0 -j MASQUERADE
 ```
+
+9. go to Burp Suite and start a proxy listener on your `<BURP_PORT>`, on all the interfaces. Moreover, remember to enable invisible proxying
 
 The route forwarding rules should be set by now, and we should be able to intercept the traffic of our beloved application. If you do not see any traffic, and the application seems that it is not working, the SSL pinning guards have been probably called for help.
 
