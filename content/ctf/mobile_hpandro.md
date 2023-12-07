@@ -1,6 +1,6 @@
 ---
 title: "hpAndro Mobile CTF"
-date: 2023-12-07T08:00:00+02:00
+date: 2023-12-07T07:00:00+02:00
 draft: false
 categories: ctf
 ---
@@ -330,4 +330,5 @@ Same as the previous hashing challenges.
 ## Root Detection
 
 ### Root Management Apps
+Coming Soon
 
