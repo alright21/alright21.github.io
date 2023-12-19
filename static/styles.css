@@ -31,3 +31,28 @@ h3 {
     font-size: 2.95em;
   }
 
+#cookie-notice {
+    font-size: large; 
+    padding: 0.5rem 1rem; 
+    display: none;
+    text-align: center; 
+    position: fixed; 
+    bottom: 0; 
+    left: 0px; 
+    padding-top: 8px;
+    padding-bottom: 8px; 
+    width: 100%; 
+    background: rgb(70, 70, 70);
+    color: rgba(255,255,255,1);
+}
+
+#cookie-notice a {font-weight: 600; display: inline-flex; cursor: pointer; margin-left: 0.5rem;}
+#cookie-notice-accept {color:rgb(63, 170, 41)}
+#cookie-notice-privacy {color:#4885FF;}
+#cookie-notice-deny {color:rgb(177, 40, 40)}
+#cookie-credits {font-size: small; text-align: end;}
+@media (max-width: 767px) {
+    #cookie-notice span {display: block; padding-top: 3px; margin-bottom: 1rem;}
+    #cookie-notice a {position: relative; bottom: 4px;}
+    #cookie-notice {left: 0px;}
+}
