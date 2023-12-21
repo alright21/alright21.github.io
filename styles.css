@@ -42,8 +42,9 @@ h3 {
     padding-top: 8px;
     padding-bottom: 8px; 
     width: 100%; 
-    background: rgb(70, 70, 70);
+    background: rgba(70, 70, 70,0.8);
     color: rgba(255,255,255,1);
+    z-index: 1;
 }
 
 #cookie-notice a {font-weight: 600; display: inline-flex; cursor: pointer; margin-left: 0.5rem;}
