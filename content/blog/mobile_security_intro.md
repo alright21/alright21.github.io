@@ -51,10 +51,10 @@ openssl x509 -inform der -in cert.der -out burp.pem
 openssl x509 -inform pem -subject_hash_old -in burp.pem
 # use first line hash as the name of the file
 mv burp.pem 9a5ba575.0
-adb push 9a5ba575.0 /local/data/tmp/
+adb push 9a5ba575.0 /data/local/tmp/
 adb shell
 (adb) su
-(adb) mv /local/data/tmp/9a5ba575.0 /system/etc/security/cacerts/
+(adb) mv /data/local/tmp/9a5ba575.0 /system/etc/security/cacerts/
 ```
 
 The final step is to enable the proxy: I suggest using ProxyDroid[2], an application that requires root privileges but set up a proxy using `iptables`, a better approach because some app frameworks are proxy unaware and completely ignore the proxy settings in the Wifi network.
