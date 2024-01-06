@@ -2,7 +2,7 @@
 title: "Coderdojo Turtle Race"
 date: 2023-11-06T19:04:28+01:00
 draft: false
-categories: education
+categories: edu
 ---
 
 # Coderdojo Turtle Race
