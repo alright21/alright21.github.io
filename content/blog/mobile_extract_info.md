@@ -1,7 +1,7 @@
 ---
 title: "Extract App Information from APK and IPA Package"
 date: 2024-01-07T10:15:31+01:00
-draft: true
+draft: false
 categories: blog
 ---
 
