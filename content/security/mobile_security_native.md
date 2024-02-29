@@ -2,7 +2,7 @@
 title: "Reversing and Hooking Native Libraries in Android with Frida"
 date: 2023-10-26T18:01:16+02:00
 draft: false
-categories: blog
+categories: sec
 ---
 
 # Reversing and Hooking Native Libraries in Android with Frida
