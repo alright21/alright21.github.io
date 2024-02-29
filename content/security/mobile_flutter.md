@@ -5,8 +5,6 @@ draft: false
 categories: sec
 ---
 
-# Intercepting Traffic in Mobile Flutter Applications
-
 During our tests, it may happen that we have to find vulnerabilities in applications built with the Flutter framework. It is pretty common when we have both Android and iOS apps. This framework raises some problems when we need to intercept traffic for two reasons:
 1. flutter apps are proxy unaware - if we add a proxy listener from the settings of our phone, the application will ignore it
 2. flutter apps often implement ssl pinning techniques that are not easily bypassed using standard frida scripts

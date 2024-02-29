@@ -5,7 +5,6 @@ draft: false
 categories: ctf
 ---
 
-# TCP1P CTF 2023
 Write-ups for [TCP1P](https://ctf.tcp1p.com/) CTF 2023.
 - [Challenges](#challenges)
   - [Intention](#intention)

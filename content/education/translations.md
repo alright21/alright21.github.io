@@ -5,8 +5,6 @@ draft: false
 categories: edu
 ---
 
-# Translations
-
 ## Raspberry Pi Foundation
 This is a list of coding projects I helped to translate in Italian for the [Raspberry Pi Foundation](https://www.raspberrypi.org/). Those projects are useful for [Coderdojo](https://coderdojo.com/en) and [Codeclub](https://codeclub.org/en/) during their meetings. In Milano, we started using them, and they are great! I suggest taking a look at those if you are into Computer Science education in primary schools in Italy (or in other countries, there are several languages available). These are the main projects, but there are other interesting tutorials you can find there (and some of them are already translated).
 

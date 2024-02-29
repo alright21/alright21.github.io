@@ -5,8 +5,6 @@ draft: false
 categories: dev
 ---
 
-# Leet Code Exercises
-
 Here is a list of my Leet Code solution (non exaustive). I am following https://neetcode.io/roadmap
 
 ## Contains Duplicate

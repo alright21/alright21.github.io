@@ -5,8 +5,6 @@ draft: false
 categories: ctf
 ---
 
-# hpAndro Mobile CTF
-
 Hello everyone! In this blog post, I will explain how I solved some challenges in [hpAndro](https://ctf.hpandro.raviramesh.info/) mobile CTF. I am trying to learn mobile security, and this mobile app helped me to improve my skills, especially on what concern dynamic analysis. I will update this article in the future, so keep an eye on that! Furthermore, I suggest you to try these challenges first on your own, but do not hesitate to look for the solutions if you need it:) And if you have a better solution, feel free to contact me and I will be happy to learn from you!
 
 We can download the application from [github](https://github.com/RavikumarRamesh/hpAndro1337/blob/main/Android%20AppSec%20(Kotlin)/1.3/com.hpandro.androidsecurity_1.3.apk), and install it in our device using `adb install com.hpandro.androidsecurity_1.3.apk`, after connecting our phone via USB(or turning on our emulator). The challenges are divided into different sections, and below I will try to tackle them without following a specific order.

@@ -5,8 +5,6 @@ draft: false
 categories: sec
 ---
 
-# Reversing and Hooking Native Libraries in Android with Frida
-
 Android applications are written in Java (Kotlin): we can use tools like jadx to decompile Java smali code to analyze the code, identify interesting methods and find possible secrets.
 
 In some cases, Android applications use native libraries to perform some specific tasks: they may be used for root detection, or they can also be responsible for encryption, or simply to run simple tasks, like hide secrets. We can find libraries used inside the apk, by unpacking the `.apk` using `apktool d`, inside the `/lib` folder. Native means that each library is compiled based on the hardware architecture the application will run on, meaning that we will have different folders with the same libraries, but compiled for different architectures.

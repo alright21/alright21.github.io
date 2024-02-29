@@ -5,9 +5,6 @@ draft: false
 categories: edu
 ---
 
-# Coderdojo Turtle Race
-
-
 Hello everyone! Today I will show you what I am planning to do in future Coderdojo sessions with young ninjas who would like to learn Python.
 
 In the Raspberry Pi [projects](https://projects.raspberrypi.org/en/projects) page, there are some interesting learning paths and tutorials that we can use to teach Scratch, Python, Pi Pico and more. I found out this interesting project with Python called [Turtle Race](https://projects.raspberrypi.org/en/projects/turtle-race).

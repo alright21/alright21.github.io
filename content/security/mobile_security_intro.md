@@ -5,7 +5,6 @@ draft: false
 categories: sec
 ---
 
-# Mobile Security Introduction
 After quite a while, I finally decided to upload this article. If you come across any inconsistencies, I am always open to feedback. I will continuously update it, aiming to create a comprehensive "Mobile Security Introduction Garden". Have fun reading! :)
 
 The world of mobile application security requires to have different skills and knowledge compared to web application testing because we are also dealing with a client installed on our device that handles user input, and often communicates with a backend server. Apart from API testing knowledge, we also need a special setup, a real or emulated device, some ways to view the application code and to interact dynamically with the app while running. There are two main OS in the world of mobile security: Android and iOS. For now, we won't explain the architecture in this article. When we are dealing with the same app built for these two OS, we will notice some similarities (backend communication), and some differences (client analysis).

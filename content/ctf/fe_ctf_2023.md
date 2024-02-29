@@ -5,7 +5,6 @@ draft: false
 categories: ctf
 ---
 
-# FE CTF 2023
 Write-ups for [FE CTF 2023](https://play.fe-ctf.dk/). This weekend I was quite busy, but I managed to solve some easy challenges in this CTF.
 
 - [Challenges](#challenges)

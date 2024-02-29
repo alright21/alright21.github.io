@@ -5,7 +5,7 @@ draft: true
 categories: dev
 ---
 
-Hei everyone! Since I am working in mobile application security, I thought it wuld be a great idea to develop something, in order to see this world on the other side. I will probably won't use a lot of (or any at all) critical functionalities, but I hope it will help you to learn something about Android development in 2023.
+Hello everyone! Since I am working in mobile application security, I thought it wuld be a great idea to develop something, in order to see this world on the other side. I will probably won't use a lot of (or any at all) critical functionalities, but I hope it will help you to learn something about Android development in 2023.
 
 This is not my first Android app. In 2019, I developed a weather app for my dad: [MeteOrsago](https://github.com/alright21/MeteOrsago). It is quite simple but it was interesting to me because I learnt how to handle API data (from a plain TXT file 😅) and show them on screen. I was quite proud of it, but I stopped developing it after I completed the goal of the app: show weather data from my house's weather station, and other data related to my city and region in Italy.
 

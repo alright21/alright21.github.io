@@ -5,12 +5,13 @@ draft: false
 categories: ctf
 ---
 
-# SrdnlenCTF
 Writeups for [srdnlenCTF](https://ctf.srdnlen.it/)
 
 ## Categories
 **Web**
--  [I love pickles](#i-love-pickles)
+- [Categories](#categories)
+- [Challenges](#challenges)
+  - [I love pickles](#i-love-pickles)
 
 ## Challenges
 ### I love pickles

@@ -5,8 +5,6 @@ draft: false
 categories: sec
 ---
 
-# Extract App Information from APK and IPA Package
-
 During my mobile security journey, I often get stuck when searching for the publicly known app information that I am testing. We are talking about app name, app main package, version number and build. This information is important for reporting: I usually fire up my MobsF Docker instance and get this information from there. This process is often too slow, especially for big applications: I often forget to note down this data before turning off the Docker instance:(
 
 This mini guide serves as a reminder for me and, hopefully, a precious tip for you. I will explain an easier way to extract that information via Linux command line and a bit of Python!

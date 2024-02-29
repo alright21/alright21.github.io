@@ -5,8 +5,6 @@ draft: false
 categories: sec
 ---
 
-# Intercepting Non-HTTP Traffic in Android
-
 Recently I have started solving a mobile security CTF called [hpAndro](https://ctf.hpandro.raviramesh.info/) and I stumbled upon two challenges focusing on intercepting non-HTTP traffic in Android. I tried to check if I could do it by setting up Wireshark on my laptop and detect this communication directly from that, but it was not working. 
 
 I thought I could change my perspective and monitor traffic directly from my device (it is always Linux). In this short article, I will show two methodologies I found to monitor app traffic, especially non-HTTP one.
