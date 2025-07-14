@@ -1,4 +1,4 @@
-baseURL = 'https://alright21.github.io'
+baseURL = 'https://blog.alright21.me'
 languageCode = 'en-us'
 title = 'Alberto Giust'
 theme = 'hugo-theme-cactus'
