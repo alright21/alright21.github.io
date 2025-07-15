@@ -1,2 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dev Blog on Alberto Giust</title><link>https://alright21.github.io/dev/</link><description>Recent content in Dev Blog on Alberto Giust</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Jan 2024 20:40:03 +0100</lastBuildDate><atom:link href="https://alright21.github.io/dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Leet Code Exercises</title><link>https://alright21.github.io/dev/leet_code/</link><pubDate>Mon, 29 Jan 2024 20:40:03 +0100</pubDate><guid>https://alright21.github.io/dev/leet_code/</guid><description>Here is a list of my Leet Code solution (non exaustive). I am following https://neetcode.io/roadmap
-Contains Duplicate class Solution: def containsDuplicate(self, nums: List[int]) -&amp;gt; bool: result = {} for item in nums: if item in result: return True result[item] = True return False Valid Anagram class Solution: def isAnagram(self, s: str, t: str) -&amp;gt; bool: res = {} for item in s: if item in res: res[item]+=1 else: res[item]=1 for item in t: if item in res: res[item]-=1 if res[item]==0: del res[item] else: return False if len(res)&amp;gt;0: return False return True Two Sum class Solution: def twoSum(self, nums: List[int], target: int) -&amp;gt; List[int]: for i in range(len(nums)): for j in range(i+1,len(nums)): if nums[i] + nums[j] == target: return [i,j] Group Anagrams class Solution: def groupAnagrams(self, strs: List[str]) -&amp;gt; List[List[str]]: res = {} for s in strs: ss = str(sorted(s)) if ss in res: res[ss].</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dev Blog on Alberto Giust</title><link>https://blog.alright21.me/dev/</link><description>Recent content in Dev Blog on Alberto Giust</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 29 Jan 2024 20:40:03 +0100</lastBuildDate><atom:link href="https://blog.alright21.me/dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Leet Code Exercises</title><link>https://blog.alright21.me/dev/leet_code/</link><pubDate>Mon, 29 Jan 2024 20:40:03 +0100</pubDate><guid>https://blog.alright21.me/dev/leet_code/</guid><description>&lt;p>Here is a list of my Leet Code solution (non exaustive). I am following &lt;a href="https://neetcode.io/roadmap">https://neetcode.io/roadmap&lt;/a>&lt;/p>
+&lt;h2 id="contains-duplicate">Contains Duplicate&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">containsDuplicate&lt;/span>(self, nums: List[int]) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> bool:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> result:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result[item] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="valid-anagram">Valid Anagram&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">isAnagram&lt;/span>(self, s: str, t: str) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> bool:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> res:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[item]&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[item]&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> t:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> res:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[item]&lt;span style="color:#f92672">-=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> res[item]&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">del&lt;/span> res[item]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> len(res)&lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="two-sum">Two Sum&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">twoSum&lt;/span>(self, nums: List[int], target: int) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> List[int]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(len(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> j &lt;span style="color:#f92672">in&lt;/span> range(i&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,len(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> nums[i] &lt;span style="color:#f92672">+&lt;/span> nums[j] &lt;span style="color:#f92672">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> [i,j]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="group-anagrams">Group Anagrams&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">groupAnagrams&lt;/span>(self, strs: List[str]) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> List[List[str]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> s &lt;span style="color:#f92672">in&lt;/span> strs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ss &lt;span style="color:#f92672">=&lt;/span> str(sorted(s))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> ss &lt;span style="color:#f92672">in&lt;/span> res:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[ss]&lt;span style="color:#f92672">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[ss] &lt;span style="color:#f92672">=&lt;/span> [s]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (list(res&lt;span style="color:#f92672">.&lt;/span>values()))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="top-k-frequent-elements">Top K Frequent Elements&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">topKFrequent&lt;/span>(self, nums: List[int], k: int) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> List[int]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> len(nums) &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> [nums[&lt;span style="color:#ae81ff">0&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> occ &lt;span style="color:#f92672">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(len(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> nums[i] &lt;span style="color:#f92672">in&lt;/span> occ:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> occ[nums[i]] &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> occ[nums[i]] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socc &lt;span style="color:#f92672">=&lt;/span> sorted(occ&lt;span style="color:#f92672">.&lt;/span>items(),key&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">lambda&lt;/span> x:x[&lt;span style="color:#ae81ff">1&lt;/span>],reverse&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v &lt;span style="color:#f92672">=&lt;/span> list(dict(socc)&lt;span style="color:#f92672">.&lt;/span>keys())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> v[&lt;span style="color:#ae81ff">0&lt;/span>:k]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>O(n) with buckets&lt;/p></description></item></channel></rss>
