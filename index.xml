@@ -1,187 +1,188 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Alberto Giust</title><link>https://blog.alright21.me/</link><description>Recent content on Alberto Giust</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 29 Feb 2024 08:30:26 +0100</lastBuildDate><atom:link href="https://blog.alright21.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Exploiting Exported Services: IPC Messenger</title><link>https://blog.alright21.me/security/exploiting_ipc_messenger/</link><pubDate>Thu, 29 Feb 2024 08:30:26 +0100</pubDate><guid>https://blog.alright21.me/security/exploiting_ipc_messenger/</guid><description>&lt;p>Hello everyone! It&amp;rsquo;s &lt;code>alright&lt;/code> here. In this article we will explore the concepts of exported components, bound services, and IPC (Inter-Process Communication) in Android, what are the risks associated to them and how we can exploit them when misconfigured. I will share a vulnerable application based on a real life example I encountered during my daily job.&lt;/p>
-&lt;p>Prepare your Android knowledge and let&amp;rsquo;s get started.&lt;/p>
-&lt;h2 id="what-is-a-service">What is a Service&lt;/h2>
-&lt;p>A &lt;a href="https://developer.android.com/reference/android/app/Service">&lt;code>Service&lt;/code>&lt;/a> is an application component used to perform actions in background. A service does not run on a separate process or a separate thread and does not need a user interface. They are used for sending notifications, manage audio playback or create persistent connection between multiple processes for service-client communication. In this article we will focus our study on bound services used for inter-process communication.&lt;/p></description></item><item><title>Leet Code Exercises</title><link>https://blog.alright21.me/dev/leet_code/</link><pubDate>Mon, 29 Jan 2024 20:40:03 +0100</pubDate><guid>https://blog.alright21.me/dev/leet_code/</guid><description>&lt;p>Here is a list of my Leet Code solution (non exaustive). I am following &lt;a href="https://neetcode.io/roadmap">https://neetcode.io/roadmap&lt;/a>&lt;/p>
-&lt;h2 id="contains-duplicate">Contains Duplicate&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Solution&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">containsDuplicate&lt;/span>(self, nums: List[int]) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> bool:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#f92672">=&lt;/span> {}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> nums:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> result:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result[item] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="valid-anagram">Valid Anagram&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Solution&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">isAnagram&lt;/span>(self, s: str, t: str) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> bool:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> {}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> s:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> res:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[item]&lt;span style="color:#f92672">+=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[item]&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> t:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> item &lt;span style="color:#f92672">in&lt;/span> res:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[item]&lt;span style="color:#f92672">-=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> res[item]&lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">del&lt;/span> res[item]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> len(res)&lt;span style="color:#f92672">&amp;gt;&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="two-sum">Two Sum&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Solution&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">twoSum&lt;/span>(self, nums: List[int], target: int) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> List[int]:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(len(nums)):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> j &lt;span style="color:#f92672">in&lt;/span> range(i&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,len(nums)):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> nums[i] &lt;span style="color:#f92672">+&lt;/span> nums[j] &lt;span style="color:#f92672">==&lt;/span> target:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> [i,j]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="group-anagrams">Group Anagrams&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Solution&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">groupAnagrams&lt;/span>(self, strs: List[str]) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> List[List[str]]:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> {}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> s &lt;span style="color:#f92672">in&lt;/span> strs:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ss &lt;span style="color:#f92672">=&lt;/span> str(sorted(s))
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> ss &lt;span style="color:#f92672">in&lt;/span> res:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[ss]&lt;span style="color:#f92672">.&lt;/span>append(s)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[ss] &lt;span style="color:#f92672">=&lt;/span> [s]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> (list(res&lt;span style="color:#f92672">.&lt;/span>values()))
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="top-k-frequent-elements">Top K Frequent Elements&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Solution&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">topKFrequent&lt;/span>(self, nums: List[int], k: int) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> List[int]:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> len(nums) &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> [nums[&lt;span style="color:#ae81ff">0&lt;/span>]]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> occ &lt;span style="color:#f92672">=&lt;/span> {}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(len(nums)):
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> nums[i] &lt;span style="color:#f92672">in&lt;/span> occ:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> occ[nums[i]] &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> occ[nums[i]] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socc &lt;span style="color:#f92672">=&lt;/span> sorted(occ&lt;span style="color:#f92672">.&lt;/span>items(),key&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">lambda&lt;/span> x:x[&lt;span style="color:#ae81ff">1&lt;/span>],reverse&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v &lt;span style="color:#f92672">=&lt;/span> list(dict(socc)&lt;span style="color:#f92672">.&lt;/span>keys())
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> v[&lt;span style="color:#ae81ff">0&lt;/span>:k]
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>O(n) with buckets&lt;/p></description></item><item><title>Extract App Information from APK and IPA Package</title><link>https://blog.alright21.me/security/mobile_extract_info/</link><pubDate>Sun, 07 Jan 2024 10:15:31 +0100</pubDate><guid>https://blog.alright21.me/security/mobile_extract_info/</guid><description>&lt;p>During my mobile security journey, I often get stuck when searching for the publicly known app information that I am testing. We are talking about app name, app main package, version number and build. This information is important for reporting: I usually fire up my MobsF Docker instance and get this information from there. This process is often too slow, especially for big applications: I often forget to note down this data before turning off the Docker instance:(&lt;/p></description></item><item><title>Translations</title><link>https://blog.alright21.me/education/translations/</link><pubDate>Sat, 06 Jan 2024 09:47:22 +0100</pubDate><guid>https://blog.alright21.me/education/translations/</guid><description>&lt;h2 id="raspberry-pi-foundation">Raspberry Pi Foundation&lt;/h2>
-&lt;p>This is a list of coding projects I helped to translate in Italian for the &lt;a href="https://www.raspberrypi.org/">Raspberry Pi Foundation&lt;/a>. Those projects are useful for &lt;a href="https://coderdojo.com/en">Coderdojo&lt;/a> and &lt;a href="https://codeclub.org/en/">Codeclub&lt;/a> during their meetings. In Milano, we started using them, and they are great! I suggest taking a look at those if you are into Computer Science education in primary schools in Italy (or in other countries, there are several languages available). These are the main projects, but there are other interesting tutorials you can find there (and some of them are already translated).&lt;/p></description></item><item><title>Privacy</title><link>https://blog.alright21.me/privacy/</link><pubDate>Tue, 19 Dec 2023 16:21:15 +0100</pubDate><guid>https://blog.alright21.me/privacy/</guid><description>&lt;h1 id="privacy">Privacy&lt;/h1>
-&lt;p>This website uses Google Analytics cookies to gather insight about the traffic. All data is anonymized, I only use it to check if someone is interested in my content:)&lt;/p>
-&lt;p>No data is sold to third-party. If you opt-out, I won&amp;rsquo;t collect any information.&lt;/p></description></item><item><title>hpAndro Mobile CTF</title><link>https://blog.alright21.me/ctf/mobile_hpandro/</link><pubDate>Thu, 07 Dec 2023 07:00:00 +0200</pubDate><guid>https://blog.alright21.me/ctf/mobile_hpandro/</guid><description>&lt;p>Hello everyone! In this blog post, I will explain how I solved some challenges in &lt;a href="https://ctf.hpandro.raviramesh.info/">hpAndro&lt;/a> mobile CTF. I am trying to learn mobile security, and this mobile app helped me to improve my skills, especially on what concern dynamic analysis. I will update this article in the future, so keep an eye on that! Furthermore, I suggest you to try these challenges first on your own, but do not hesitate to look for the solutions if you need it:) And if you have a better solution, feel free to contact me and I will be happy to learn from you!&lt;/p></description></item><item><title>Coderdojo Turtle Race</title><link>https://blog.alright21.me/education/coderdojo_turtle_race/</link><pubDate>Mon, 06 Nov 2023 19:04:28 +0100</pubDate><guid>https://blog.alright21.me/education/coderdojo_turtle_race/</guid><description>&lt;p>Hello everyone! Today I will show you what I am planning to do in future Coderdojo sessions with young ninjas who would like to learn Python.&lt;/p>
-&lt;p>In the Raspberry Pi &lt;a href="https://projects.raspberrypi.org/en/projects">projects&lt;/a> page, there are some interesting learning paths and tutorials that we can use to teach Scratch, Python, Pi Pico and more. I found out this interesting project with Python called &lt;a href="https://projects.raspberrypi.org/en/projects/turtle-race">Turtle Race&lt;/a>.&lt;/p>
-&lt;p>It is a fun project because kids learn about some advanced &lt;code>turtle&lt;/code> and Python features, while creating a simple game.&lt;/p></description></item><item><title>FE CTF 2023</title><link>https://blog.alright21.me/ctf/fe_ctf_2023/</link><pubDate>Mon, 30 Oct 2023 08:58:25 +0200</pubDate><guid>https://blog.alright21.me/ctf/fe_ctf_2023/</guid><description>&lt;p>Write-ups for &lt;a href="https://play.fe-ctf.dk/">FE CTF 2023&lt;/a>. This weekend I was quite busy, but I managed to solve some easy challenges in this CTF.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="#challenges">Challenges&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#login---level-1">Login - Level 1&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#login---level-2">Login - Level 2&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#login---level-4">Login - Level 4&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#crackmeexe---level-1">CRACKME.EXE - Level 1&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="challenges">Challenges&lt;/h2>
-&lt;h3 id="login---level-1">Login - Level 1&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: center">&lt;strong>Category&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Points&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Solves&lt;/strong>&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: center">Web&lt;/td>
- &lt;td style="text-align: center">26&lt;/td>
- &lt;td style="text-align: center">357&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h4 id="challenge-description">Challenge Description&lt;/h4>
-&lt;blockquote>
-&lt;p>So you fancy yourself a hacker? Me? I don&amp;rsquo;t even see the code!&lt;/p>
-&lt;p>&lt;a href="http://login-lvl1.hack.fe-ctf.dk/">Log in, get flag&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;h4 id="approach">Approach&lt;/h4>
-&lt;p>The application consists of a login page. We see immediately that we get an error &amp;ldquo;Invalid Password&amp;rdquo;.&lt;/p></description></item><item><title>Reversing and Hooking Native Libraries in Android with Frida</title><link>https://blog.alright21.me/security/mobile_security_native/</link><pubDate>Thu, 26 Oct 2023 18:01:16 +0200</pubDate><guid>https://blog.alright21.me/security/mobile_security_native/</guid><description>&lt;p>Android applications are written in Java (Kotlin): we can use tools like jadx to decompile Java smali code to analyze the code, identify interesting methods and find possible secrets.&lt;/p>
-&lt;p>In some cases, Android applications use native libraries to perform some specific tasks: they may be used for root detection, or they can also be responsible for encryption, or simply to run simple tasks, like hide secrets. We can find libraries used inside the apk, by unpacking the &lt;code>.apk&lt;/code> using &lt;code>apktool d&lt;/code>, inside the &lt;code>/lib&lt;/code> folder. Native means that each library is compiled based on the hardware architecture the application will run on, meaning that we will have different folders with the same libraries, but compiled for different architectures.&lt;/p></description></item><item><title>TCP1P CTF 2023</title><link>https://blog.alright21.me/ctf/tcp1pctf/</link><pubDate>Tue, 17 Oct 2023 08:53:58 +0200</pubDate><guid>https://blog.alright21.me/ctf/tcp1pctf/</guid><description>&lt;p>Write-ups for &lt;a href="https://ctf.tcp1p.com/">TCP1P&lt;/a> CTF 2023.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="#challenges">Challenges&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#intention">Intention&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="challenges">Challenges&lt;/h2>
-&lt;h3 id="intention">Intention&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: center">&lt;strong>Category&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Points&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Solves&lt;/strong>&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: center">Mobile&lt;/td>
- &lt;td style="text-align: center">356&lt;/td>
- &lt;td style="text-align: center">13&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h4 id="challenge-description">Challenge Description&lt;/h4>
-&lt;figure style="margin-left: 0px;">
- &lt;img src="https://blog.alright21.me/assets/tcp1p_intention_description.png" alt="intention description" style="width:60%; float: left">
- &lt;figcaption>&lt;/figcaption>
-&lt;/figure>
-&lt;h4 id="approach">Approach&lt;/h4>
-&lt;p>The challenge presents an interesting setup compared to regular mobile challenges: we are asked to create a malicious app that exploits it inside an emulator, great idea!&lt;/p>
-&lt;p>The application has two activities: MainActivity, where nothing happens, and a FlagSender, where the content of &lt;code>flag.txt&lt;/code> file is set as an intent result and sent back to the caller. The AndroidManifest.xml also suggests what should be the approach of exploiting this challenge: FlagSender activity is exported, so we are able to start it from an external application, and retrieve the intent result (set with &lt;code>setResult(-1, getIntent().putExtra(&amp;quot;flag&amp;quot;, flag));&lt;/code>). We have everything we need in theory, but we need to create a malicious application to install in the emulator in order to exploit it.&lt;/p></description></item><item><title>About me</title><link>https://blog.alright21.me/about/</link><pubDate>Fri, 08 Sep 2023 15:39:23 +0200</pubDate><guid>https://blog.alright21.me/about/</guid><description>&lt;h3 id="hi-there-">Hi there 👋&lt;/h3>
-&lt;p>I am &lt;strong>Alberto&lt;/strong>, Penetration Tester and Security Enthusiast (mobile-focused)&lt;/p>
-&lt;ul>
-&lt;li>😄 Pronouns: &lt;strong>He/Him&lt;/strong>&lt;/li>
-&lt;li>📍 &lt;strong>Milan&lt;/strong>, Italy&lt;/li>
-&lt;li>🔭 I’m currently working on &lt;strong>Web&lt;/strong> and &lt;strong>Mobile application security testing&lt;/strong> for Spike Reply. I hunt for security bugs and report them to clients&lt;/li>
-&lt;li>🌱 I’m currently learning Web and Mobile Security (constantly evolving)&lt;/li>
-&lt;li>📜 &lt;strong>eWPT&lt;/strong> (eLearn Security Web Penetration Tester)&lt;/li>
-&lt;li>📜 &lt;strong>eCDFP&lt;/strong> (eLearn Certified Digital Forensics Professional)&lt;/li>
-&lt;li>📫 How to reach me:
-&lt;ul>
-&lt;li>alberto.giust21[at]gmail.com&lt;/li>
-&lt;li>@alright2121 (Telegram)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="interests">Interests&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>Mobile Security&lt;/strong> 📱: I am trying to improve my skills in this area, ranging from static analysis and reversing, to dynamic analysis (Frida is becoming a great friend of mine😄)&lt;/li>
-&lt;li>&lt;strong>Education in programming and Cybersecurity&lt;/strong> 🧮: I am currently volunteering in Coderdojo Milano. I am helping kids and teenagers discover this beautiful world&lt;/li>
-&lt;li>&lt;strong>Open Translator&lt;/strong> 🗣: I am translating &lt;a href="https://www.raspberrypi.org/">Raspberry Pi Foundation&lt;/a> coding projects (more info &lt;a href="https://alright21.github.io/education/translations/">https://alright21.github.io/education/translations/&lt;/a>)&lt;/li>
-&lt;li>&lt;strong>CTFs&lt;/strong> 🚩: they help me continuously learn while training my problem-solving skills&lt;/li>
-&lt;li>&lt;strong>Reading books and blog posts&lt;/strong> 📖: the best way to improve critical thinking, discover new things, and go deeper on a subject&lt;/li>
-&lt;li>&lt;strong>Hiking&lt;/strong> ⛰️: reaching the top of the cliff is one of the best sensations I had/have/will have&lt;/li>
-&lt;li>&lt;strong>Dancing&lt;/strong> 🕺: the best way for me to get out of my comfort zone, and it always makes me smile&lt;/li>
-&lt;li>&lt;strong>Board Games and TTRPG&lt;/strong> 🎲: a great way to spend time with friends, improve decision making and have fun&lt;/li>
-&lt;li>&lt;strong>Sports&lt;/strong> ⚽🏀🏐🖥️: I enjoy watching different sports/esports and support my national team&lt;/li>
-&lt;/ul>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Alberto Giust</title><link>https://blog.alright21.me/</link><description>Recent content on Alberto Giust</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 29 Feb 2024 08:30:26 +0100</lastBuildDate><atom:link href="https://blog.alright21.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Exploiting Exported Services: IPC Messenger</title><link>https://blog.alright21.me/security/exploiting_ipc_messenger/</link><pubDate>Thu, 29 Feb 2024 08:30:26 +0100</pubDate><guid>https://blog.alright21.me/security/exploiting_ipc_messenger/</guid><description>&lt;p&gt;Hello everyone! It&amp;rsquo;s &lt;code&gt;alright&lt;/code&gt; here. In this article we will explore the concepts of exported components, bound services, and IPC (Inter-Process Communication) in Android, what are the risks associated to them and how we can exploit them when misconfigured. I will share a vulnerable application based on a real life example I encountered during my daily job.&lt;/p&gt;
+&lt;p&gt;Prepare your Android knowledge and let&amp;rsquo;s get started.&lt;/p&gt;
+&lt;h2 id="what-is-a-service"&gt;What is a Service&lt;/h2&gt;
+&lt;p&gt;A &lt;a href="https://developer.android.com/reference/android/app/Service"&gt;&lt;code&gt;Service&lt;/code&gt;&lt;/a&gt; is an application component used to perform actions in background. A service does not run on a separate process or a separate thread and does not need a user interface. They are used for sending notifications, manage audio playback or create persistent connection between multiple processes for service-client communication. In this article we will focus our study on bound services used for inter-process communication.&lt;/p&gt;</description></item><item><title>Leet Code Exercises</title><link>https://blog.alright21.me/dev/leet_code/</link><pubDate>Mon, 29 Jan 2024 20:40:03 +0100</pubDate><guid>https://blog.alright21.me/dev/leet_code/</guid><description>&lt;p&gt;Here is a list of my Leet Code solution (non exaustive). I am following &lt;a href="https://neetcode.io/roadmap"&gt;https://neetcode.io/roadmap&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="contains-duplicate"&gt;Contains Duplicate&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Solution&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;containsDuplicate&lt;/span&gt;(self, nums: List[int]) &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt; bool:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; result &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; item &lt;span style="color:#f92672"&gt;in&lt;/span&gt; nums:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; item &lt;span style="color:#f92672"&gt;in&lt;/span&gt; result:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; result[item] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="valid-anagram"&gt;Valid Anagram&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Solution&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;isAnagram&lt;/span&gt;(self, s: str, t: str) &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt; bool:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; res &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; item &lt;span style="color:#f92672"&gt;in&lt;/span&gt; s:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; item &lt;span style="color:#f92672"&gt;in&lt;/span&gt; res:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; res[item]&lt;span style="color:#f92672"&gt;+=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; res[item]&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; item &lt;span style="color:#f92672"&gt;in&lt;/span&gt; t:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; item &lt;span style="color:#f92672"&gt;in&lt;/span&gt; res:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; res[item]&lt;span style="color:#f92672"&gt;-=&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; res[item]&lt;span style="color:#f92672"&gt;==&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;del&lt;/span&gt; res[item]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; len(res)&lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="two-sum"&gt;Two Sum&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Solution&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;twoSum&lt;/span&gt;(self, nums: List[int], target: int) &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt; List[int]:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; i &lt;span style="color:#f92672"&gt;in&lt;/span&gt; range(len(nums)):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; j &lt;span style="color:#f92672"&gt;in&lt;/span&gt; range(i&lt;span style="color:#f92672"&gt;+&lt;/span&gt;&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;,len(nums)):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; nums[i] &lt;span style="color:#f92672"&gt;+&lt;/span&gt; nums[j] &lt;span style="color:#f92672"&gt;==&lt;/span&gt; target:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; [i,j]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="group-anagrams"&gt;Group Anagrams&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Solution&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;groupAnagrams&lt;/span&gt;(self, strs: List[str]) &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt; List[List[str]]:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; res &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; s &lt;span style="color:#f92672"&gt;in&lt;/span&gt; strs:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ss &lt;span style="color:#f92672"&gt;=&lt;/span&gt; str(sorted(s))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; ss &lt;span style="color:#f92672"&gt;in&lt;/span&gt; res:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; res[ss]&lt;span style="color:#f92672"&gt;.&lt;/span&gt;append(s)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; res[ss] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; [s]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; (list(res&lt;span style="color:#f92672"&gt;.&lt;/span&gt;values()))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="top-k-frequent-elements"&gt;Top K Frequent Elements&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Solution&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;def&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;topKFrequent&lt;/span&gt;(self, nums: List[int], k: int) &lt;span style="color:#f92672"&gt;-&amp;gt;&lt;/span&gt; List[int]:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; len(nums) &lt;span style="color:#f92672"&gt;==&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; [nums[&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; occ &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; i &lt;span style="color:#f92672"&gt;in&lt;/span&gt; range(len(nums)):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; nums[i] &lt;span style="color:#f92672"&gt;in&lt;/span&gt; occ:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; occ[nums[i]] &lt;span style="color:#f92672"&gt;+=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; occ[nums[i]] &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; socc &lt;span style="color:#f92672"&gt;=&lt;/span&gt; sorted(occ&lt;span style="color:#f92672"&gt;.&lt;/span&gt;items(),key&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;lambda&lt;/span&gt; x:x[&lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;],reverse&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; v &lt;span style="color:#f92672"&gt;=&lt;/span&gt; list(dict(socc)&lt;span style="color:#f92672"&gt;.&lt;/span&gt;keys())
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; v[&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;:k]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;O(n) with buckets&lt;/p&gt;</description></item><item><title>Extract App Information from APK and IPA Package</title><link>https://blog.alright21.me/security/mobile_extract_info/</link><pubDate>Sun, 07 Jan 2024 10:15:31 +0100</pubDate><guid>https://blog.alright21.me/security/mobile_extract_info/</guid><description>&lt;p&gt;During my mobile security journey, I often get stuck when searching for the publicly known app information that I am testing. We are talking about app name, app main package, version number and build. This information is important for reporting: I usually fire up my MobsF Docker instance and get this information from there. This process is often too slow, especially for big applications: I often forget to note down this data before turning off the Docker instance:(&lt;/p&gt;</description></item><item><title>Translations</title><link>https://blog.alright21.me/education/translations/</link><pubDate>Sat, 06 Jan 2024 09:47:22 +0100</pubDate><guid>https://blog.alright21.me/education/translations/</guid><description>&lt;h2 id="raspberry-pi-foundation"&gt;Raspberry Pi Foundation&lt;/h2&gt;
+&lt;p&gt;This is a list of coding projects I helped to translate in Italian for the &lt;a href="https://www.raspberrypi.org/"&gt;Raspberry Pi Foundation&lt;/a&gt;. Those projects are useful for &lt;a href="https://coderdojo.com/en"&gt;Coderdojo&lt;/a&gt; and &lt;a href="https://codeclub.org/en/"&gt;Codeclub&lt;/a&gt; during their meetings. In Milano, we started using them, and they are great! I suggest taking a look at those if you are into Computer Science education in primary schools in Italy (or in other countries, there are several languages available). These are the main projects, but there are other interesting tutorials you can find there (and some of them are already translated).&lt;/p&gt;</description></item><item><title>Privacy</title><link>https://blog.alright21.me/privacy/</link><pubDate>Tue, 19 Dec 2023 16:21:15 +0100</pubDate><guid>https://blog.alright21.me/privacy/</guid><description>&lt;h1 id="privacy"&gt;Privacy&lt;/h1&gt;
+&lt;p&gt;This website uses Google Analytics cookies to gather insight about the traffic. All data is anonymized, I only use it to check if someone is interested in my content:)&lt;/p&gt;
+&lt;p&gt;No data is sold to third-party. If you opt-out, I won&amp;rsquo;t collect any information.&lt;/p&gt;</description></item><item><title>hpAndro Mobile CTF</title><link>https://blog.alright21.me/ctf/mobile_hpandro/</link><pubDate>Thu, 07 Dec 2023 07:00:00 +0200</pubDate><guid>https://blog.alright21.me/ctf/mobile_hpandro/</guid><description>&lt;p&gt;Hello everyone! In this blog post, I will explain how I solved some challenges in &lt;a href="https://ctf.hpandro.raviramesh.info/"&gt;hpAndro&lt;/a&gt; mobile CTF. I am trying to learn mobile security, and this mobile app helped me to improve my skills, especially on what concern dynamic analysis. I will update this article in the future, so keep an eye on that! Furthermore, I suggest you to try these challenges first on your own, but do not hesitate to look for the solutions if you need it:) And if you have a better solution, feel free to contact me and I will be happy to learn from you!&lt;/p&gt;</description></item><item><title>Coderdojo Turtle Race</title><link>https://blog.alright21.me/education/coderdojo_turtle_race/</link><pubDate>Mon, 06 Nov 2023 19:04:28 +0100</pubDate><guid>https://blog.alright21.me/education/coderdojo_turtle_race/</guid><description>&lt;p&gt;Hello everyone! Today I will show you what I am planning to do in future Coderdojo sessions with young ninjas who would like to learn Python.&lt;/p&gt;
+&lt;p&gt;In the Raspberry Pi &lt;a href="https://projects.raspberrypi.org/en/projects"&gt;projects&lt;/a&gt; page, there are some interesting learning paths and tutorials that we can use to teach Scratch, Python, Pi Pico and more. I found out this interesting project with Python called &lt;a href="https://projects.raspberrypi.org/en/projects/turtle-race"&gt;Turtle Race&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It is a fun project because kids learn about some advanced &lt;code&gt;turtle&lt;/code&gt; and Python features, while creating a simple game.&lt;/p&gt;</description></item><item><title>FE CTF 2023</title><link>https://blog.alright21.me/ctf/fe_ctf_2023/</link><pubDate>Mon, 30 Oct 2023 08:58:25 +0200</pubDate><guid>https://blog.alright21.me/ctf/fe_ctf_2023/</guid><description>&lt;p&gt;Write-ups for &lt;a href="https://play.fe-ctf.dk/"&gt;FE CTF 2023&lt;/a&gt;. This weekend I was quite busy, but I managed to solve some easy challenges in this CTF.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#challenges"&gt;Challenges&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#login---level-1"&gt;Login - Level 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#login---level-2"&gt;Login - Level 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#login---level-4"&gt;Login - Level 4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#crackmeexe---level-1"&gt;CRACKME.EXE - Level 1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="challenges"&gt;Challenges&lt;/h2&gt;
+&lt;h3 id="login---level-1"&gt;Login - Level 1&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Points&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Web&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;26&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;357&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id="challenge-description"&gt;Challenge Description&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;So you fancy yourself a hacker? Me? I don&amp;rsquo;t even see the code!&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://login-lvl1.hack.fe-ctf.dk/"&gt;Log in, get flag&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id="approach"&gt;Approach&lt;/h4&gt;
+&lt;p&gt;The application consists of a login page. We see immediately that we get an error &amp;ldquo;Invalid Password&amp;rdquo;.&lt;/p&gt;</description></item><item><title>Reversing and Hooking Native Libraries in Android with Frida</title><link>https://blog.alright21.me/security/mobile_security_native/</link><pubDate>Thu, 26 Oct 2023 18:01:16 +0200</pubDate><guid>https://blog.alright21.me/security/mobile_security_native/</guid><description>&lt;p&gt;Android applications are written in Java (Kotlin): we can use tools like jadx to decompile Java smali code to analyze the code, identify interesting methods and find possible secrets.&lt;/p&gt;
+&lt;p&gt;In some cases, Android applications use native libraries to perform some specific tasks: they may be used for root detection, or they can also be responsible for encryption, or simply to run simple tasks, like hide secrets. We can find libraries used inside the apk, by unpacking the &lt;code&gt;.apk&lt;/code&gt; using &lt;code&gt;apktool d&lt;/code&gt;, inside the &lt;code&gt;/lib&lt;/code&gt; folder. Native means that each library is compiled based on the hardware architecture the application will run on, meaning that we will have different folders with the same libraries, but compiled for different architectures.&lt;/p&gt;</description></item><item><title>TCP1P CTF 2023</title><link>https://blog.alright21.me/ctf/tcp1pctf/</link><pubDate>Tue, 17 Oct 2023 08:53:58 +0200</pubDate><guid>https://blog.alright21.me/ctf/tcp1pctf/</guid><description>&lt;p&gt;Write-ups for &lt;a href="https://ctf.tcp1p.com/"&gt;TCP1P&lt;/a&gt; CTF 2023.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#challenges"&gt;Challenges&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#intention"&gt;Intention&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="challenges"&gt;Challenges&lt;/h2&gt;
+&lt;h3 id="intention"&gt;Intention&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Points&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Mobile&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;356&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;13&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id="challenge-description"&gt;Challenge Description&lt;/h4&gt;
+&lt;figure style="margin-left: 0px;"&gt;
+ &lt;img src="https://blog.alright21.me/assets/tcp1p_intention_description.png" alt="intention description" style="width:60%; float: left"&gt;
+ &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h4 id="approach"&gt;Approach&lt;/h4&gt;
+&lt;p&gt;The challenge presents an interesting setup compared to regular mobile challenges: we are asked to create a malicious app that exploits it inside an emulator, great idea!&lt;/p&gt;
+&lt;p&gt;The application has two activities: MainActivity, where nothing happens, and a FlagSender, where the content of &lt;code&gt;flag.txt&lt;/code&gt; file is set as an intent result and sent back to the caller. The AndroidManifest.xml also suggests what should be the approach of exploiting this challenge: FlagSender activity is exported, so we are able to start it from an external application, and retrieve the intent result (set with &lt;code&gt;setResult(-1, getIntent().putExtra(&amp;quot;flag&amp;quot;, flag));&lt;/code&gt;). We have everything we need in theory, but we need to create a malicious application to install in the emulator in order to exploit it.&lt;/p&gt;</description></item><item><title>About me</title><link>https://blog.alright21.me/about/</link><pubDate>Fri, 08 Sep 2023 15:39:23 +0200</pubDate><guid>https://blog.alright21.me/about/</guid><description>&lt;h3 id="hi-there-"&gt;Hi there 👋&lt;/h3&gt;
+&lt;p&gt;I am &lt;strong&gt;Alberto&lt;/strong&gt;, Penetration Tester and Security Enthusiast (mobile-focused)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;😄 Pronouns: &lt;strong&gt;He/Him&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;📍 &lt;strong&gt;Milan&lt;/strong&gt;, Italy&lt;/li&gt;
+&lt;li&gt;🔭 I&amp;rsquo;m currently working as a &lt;strong&gt;Threat Intelligence Analyst&lt;/strong&gt; at Cleafy.&lt;/li&gt;
+&lt;li&gt;🌱 I’m currently learning Android Malware Analysis&lt;/li&gt;
+&lt;li&gt;📜 &lt;strong&gt;eWPT&lt;/strong&gt; (eLearn Security Web Penetration Tester)&lt;/li&gt;
+&lt;li&gt;📜 &lt;strong&gt;eCDFP&lt;/strong&gt; (eLearn Certified Digital Forensics Professional)&lt;/li&gt;
+&lt;li&gt;📫 How to reach me:
+&lt;ul&gt;
+&lt;li&gt;alberto.giust21[at]gmail.com&lt;/li&gt;
+&lt;li&gt;@alright2121 (Telegram)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="interests"&gt;Interests&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Security&lt;/strong&gt; 📱: I am trying to improve my skills in this area, ranging from static analysis and reversing, to dynamic analysis (Frida is becoming a great friend of mine😄)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Education in programming and Cybersecurity&lt;/strong&gt; 🧮: I am currently volunteering in Coderdojo Milano. I am helping kids and teenagers discover this beautiful world&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Open Translator&lt;/strong&gt; 🗣: I am translating &lt;a href="https://www.raspberrypi.org/"&gt;Raspberry Pi Foundation&lt;/a&gt; coding projects (more info &lt;a href="https://alright21.github.io/education/translations/"&gt;https://alright21.github.io/education/translations/&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CTFs&lt;/strong&gt; 🚩: they help me continuously learn while training my problem-solving skills&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reading books and blog posts&lt;/strong&gt; 📖: the best way to improve critical thinking, discover new things, and go deeper on a subject&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hiking&lt;/strong&gt; ⛰️: reaching the top of the cliff is one of the best sensations I had/have/will have&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dancing&lt;/strong&gt; 🕺: the best way for me to get out of my comfort zone, and it always makes me smile&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Board Games and TTRPG&lt;/strong&gt; 🎲: a great way to spend time with friends, improve decision making and have fun&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sports&lt;/strong&gt; ⚽🏀🏐🖥️: I enjoy watching different sports/esports and support my national team&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!--
 **alright21/alright21** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -195,45 +196,45 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
---></description></item><item><title>Intercepting Non-HTTP Traffic in Android</title><link>https://blog.alright21.me/security/mobile_nohttp/</link><pubDate>Wed, 06 Sep 2023 12:25:03 +0200</pubDate><guid>https://blog.alright21.me/security/mobile_nohttp/</guid><description>&lt;p>Recently I have started solving a mobile security CTF called &lt;a href="https://ctf.hpandro.raviramesh.info/">hpAndro&lt;/a> and I stumbled upon two challenges focusing on intercepting non-HTTP traffic in Android. I tried to check if I could do it by setting up Wireshark on my laptop and detect this communication directly from that, but it was not working.&lt;/p>
-&lt;p>I thought I could change my perspective and monitor traffic directly from my device (it is always Linux). In this short article, I will show two methodologies I found to monitor app traffic, especially non-HTTP one.&lt;/p></description></item><item><title>Intercepting Traffic in Mobile Flutter Applications</title><link>https://blog.alright21.me/security/mobile_flutter/</link><pubDate>Tue, 01 Aug 2023 08:50:38 +0200</pubDate><guid>https://blog.alright21.me/security/mobile_flutter/</guid><description>&lt;p>During our tests, it may happen that we have to find vulnerabilities in applications built with the Flutter framework. It is pretty common when we have both Android and iOS apps. This framework raises some problems when we need to intercept traffic for two reasons:&lt;/p>
-&lt;ol>
-&lt;li>flutter apps are proxy unaware - if we add a proxy listener from the settings of our phone, the application will ignore it&lt;/li>
-&lt;li>flutter apps often implement ssl pinning techniques that are not easily bypassed using standard frida scripts&lt;/li>
-&lt;/ol>
-&lt;p>Below are explained the solutions for Android and iOS. For iOS, I will explain the procedure
-that the researchers from &lt;a href="https://www.nviso.eu/">nviso&lt;/a> suggest in their articles (Android[1] and iOS[2]) and article. They have full credit over this, I will add some comments on what was not immediately clear to me:)&lt;/p></description></item><item><title>Mobile Security Introduction</title><link>https://blog.alright21.me/security/mobile_security_intro/</link><pubDate>Sun, 23 Jul 2023 18:00:00 +0200</pubDate><guid>https://blog.alright21.me/security/mobile_security_intro/</guid><description>&lt;p>After quite a while, I finally decided to upload this article. If you come across any inconsistencies, I am always open to feedback. I will continuously update it, aiming to create a comprehensive &amp;ldquo;Mobile Security Introduction Garden&amp;rdquo;. Have fun reading! :)&lt;/p>
-&lt;p>The world of mobile application security requires to have different skills and knowledge compared to web application testing because we are also dealing with a client installed on our device that handles user input, and often communicates with a backend server. Apart from API testing knowledge, we also need a special setup, a real or emulated device, some ways to view the application code and to interact dynamically with the app while running. There are two main OS in the world of mobile security: Android and iOS. For now, we won&amp;rsquo;t explain the architecture in this article. When we are dealing with the same app built for these two OS, we will notice some similarities (backend communication), and some differences (client analysis).&lt;/p></description></item><item><title>SrdnlenCTF</title><link>https://blog.alright21.me/ctf/srdnlenctf/</link><pubDate>Wed, 12 Oct 2022 23:08:58 +0200</pubDate><guid>https://blog.alright21.me/ctf/srdnlenctf/</guid><description>&lt;p>Writeups for &lt;a href="https://ctf.srdnlen.it/">srdnlenCTF&lt;/a>&lt;/p>
-&lt;h2 id="categories">Categories&lt;/h2>
-&lt;p>&lt;strong>Web&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="#categories">Categories&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#challenges">Challenges&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#i-love-pickles">I love pickles&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="challenges">Challenges&lt;/h2>
-&lt;h3 id="i-love-pickles">I love pickles&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: center">&lt;strong>Category&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Points&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Solves&lt;/strong>&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: center">Web&lt;/td>
- &lt;td style="text-align: center">50&lt;/td>
- &lt;td style="text-align: center">51&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;p>&lt;strong>Challenge Description&lt;/strong>: My Sardinian friend says she hates &amp;ldquo;su cugumere cunfettau&amp;rdquo;, but I love them, on top of my burger and in my code.&lt;/p>
-&lt;p>If you really know your pickles you can enter in my admin area.&lt;/p>
-&lt;p>Website: &lt;a href="http://ilovepickles.challs.srdnlen.it/">http://ilovepickles.challs.srdnlen.it&lt;/a>&lt;/p>
-&lt;h4 id="approach">Approach&lt;/h4>
-&lt;p>As the name of the challenge suggests, the application should use the &lt;code>pickle&lt;/code> library to encode and decode the cookies (I found out about this library while I was playing the sekaiCTF, but I didn&amp;rsquo;t solve the challenge there). It uses method &lt;code>loads&lt;/code> to decode a cookie string and &lt;code>dumps&lt;/code> to encode it back. The cookie is also base64 encoded.&lt;/p></description></item></channel></rss>
+--&gt;</description></item><item><title>Intercepting Non-HTTP Traffic in Android</title><link>https://blog.alright21.me/security/mobile_nohttp/</link><pubDate>Wed, 06 Sep 2023 12:25:03 +0200</pubDate><guid>https://blog.alright21.me/security/mobile_nohttp/</guid><description>&lt;p&gt;Recently I have started solving a mobile security CTF called &lt;a href="https://ctf.hpandro.raviramesh.info/"&gt;hpAndro&lt;/a&gt; and I stumbled upon two challenges focusing on intercepting non-HTTP traffic in Android. I tried to check if I could do it by setting up Wireshark on my laptop and detect this communication directly from that, but it was not working.&lt;/p&gt;
+&lt;p&gt;I thought I could change my perspective and monitor traffic directly from my device (it is always Linux). In this short article, I will show two methodologies I found to monitor app traffic, especially non-HTTP one.&lt;/p&gt;</description></item><item><title>Intercepting Traffic in Mobile Flutter Applications</title><link>https://blog.alright21.me/security/mobile_flutter/</link><pubDate>Tue, 01 Aug 2023 08:50:38 +0200</pubDate><guid>https://blog.alright21.me/security/mobile_flutter/</guid><description>&lt;p&gt;During our tests, it may happen that we have to find vulnerabilities in applications built with the Flutter framework. It is pretty common when we have both Android and iOS apps. This framework raises some problems when we need to intercept traffic for two reasons:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;flutter apps are proxy unaware - if we add a proxy listener from the settings of our phone, the application will ignore it&lt;/li&gt;
+&lt;li&gt;flutter apps often implement ssl pinning techniques that are not easily bypassed using standard frida scripts&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Below are explained the solutions for Android and iOS. For iOS, I will explain the procedure
+that the researchers from &lt;a href="https://www.nviso.eu/"&gt;nviso&lt;/a&gt; suggest in their articles (Android[1] and iOS[2]) and article. They have full credit over this, I will add some comments on what was not immediately clear to me:)&lt;/p&gt;</description></item><item><title>Mobile Security Introduction</title><link>https://blog.alright21.me/security/mobile_security_intro/</link><pubDate>Sun, 23 Jul 2023 18:00:00 +0200</pubDate><guid>https://blog.alright21.me/security/mobile_security_intro/</guid><description>&lt;p&gt;After quite a while, I finally decided to upload this article. If you come across any inconsistencies, I am always open to feedback. I will continuously update it, aiming to create a comprehensive &amp;ldquo;Mobile Security Introduction Garden&amp;rdquo;. Have fun reading! :)&lt;/p&gt;
+&lt;p&gt;The world of mobile application security requires to have different skills and knowledge compared to web application testing because we are also dealing with a client installed on our device that handles user input, and often communicates with a backend server. Apart from API testing knowledge, we also need a special setup, a real or emulated device, some ways to view the application code and to interact dynamically with the app while running. There are two main OS in the world of mobile security: Android and iOS. For now, we won&amp;rsquo;t explain the architecture in this article. When we are dealing with the same app built for these two OS, we will notice some similarities (backend communication), and some differences (client analysis).&lt;/p&gt;</description></item><item><title>SrdnlenCTF</title><link>https://blog.alright21.me/ctf/srdnlenctf/</link><pubDate>Wed, 12 Oct 2022 23:08:58 +0200</pubDate><guid>https://blog.alright21.me/ctf/srdnlenctf/</guid><description>&lt;p&gt;Writeups for &lt;a href="https://ctf.srdnlen.it/"&gt;srdnlenCTF&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="categories"&gt;Categories&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Web&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#categories"&gt;Categories&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#challenges"&gt;Challenges&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#i-love-pickles"&gt;I love pickles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="challenges"&gt;Challenges&lt;/h2&gt;
+&lt;h3 id="i-love-pickles"&gt;I love pickles&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Points&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Web&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;50&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;51&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Challenge Description&lt;/strong&gt;: My Sardinian friend says she hates &amp;ldquo;su cugumere cunfettau&amp;rdquo;, but I love them, on top of my burger and in my code.&lt;/p&gt;
+&lt;p&gt;If you really know your pickles you can enter in my admin area.&lt;/p&gt;
+&lt;p&gt;Website: &lt;a href="http://ilovepickles.challs.srdnlen.it/"&gt;http://ilovepickles.challs.srdnlen.it&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="approach"&gt;Approach&lt;/h4&gt;
+&lt;p&gt;As the name of the challenge suggests, the application should use the &lt;code&gt;pickle&lt;/code&gt; library to encode and decode the cookies (I found out about this library while I was playing the sekaiCTF, but I didn&amp;rsquo;t solve the challenge there). It uses method &lt;code&gt;loads&lt;/code&gt; to decode a cookie string and &lt;code&gt;dumps&lt;/code&gt; to encode it back. The cookie is also base64 encoded.&lt;/p&gt;</description></item></channel></rss>

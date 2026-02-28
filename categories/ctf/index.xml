@@ -1,101 +1,102 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ctf on Alberto Giust</title><link>https://blog.alright21.me/categories/ctf/</link><description>Recent content in Ctf on Alberto Giust</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 07 Dec 2023 07:00:00 +0200</lastBuildDate><atom:link href="https://blog.alright21.me/categories/ctf/index.xml" rel="self" type="application/rss+xml"/><item><title>hpAndro Mobile CTF</title><link>https://blog.alright21.me/ctf/mobile_hpandro/</link><pubDate>Thu, 07 Dec 2023 07:00:00 +0200</pubDate><guid>https://blog.alright21.me/ctf/mobile_hpandro/</guid><description>&lt;p>Hello everyone! In this blog post, I will explain how I solved some challenges in &lt;a href="https://ctf.hpandro.raviramesh.info/">hpAndro&lt;/a> mobile CTF. I am trying to learn mobile security, and this mobile app helped me to improve my skills, especially on what concern dynamic analysis. I will update this article in the future, so keep an eye on that! Furthermore, I suggest you to try these challenges first on your own, but do not hesitate to look for the solutions if you need it:) And if you have a better solution, feel free to contact me and I will be happy to learn from you!&lt;/p></description></item><item><title>FE CTF 2023</title><link>https://blog.alright21.me/ctf/fe_ctf_2023/</link><pubDate>Mon, 30 Oct 2023 08:58:25 +0200</pubDate><guid>https://blog.alright21.me/ctf/fe_ctf_2023/</guid><description>&lt;p>Write-ups for &lt;a href="https://play.fe-ctf.dk/">FE CTF 2023&lt;/a>. This weekend I was quite busy, but I managed to solve some easy challenges in this CTF.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="#challenges">Challenges&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#login---level-1">Login - Level 1&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#login---level-2">Login - Level 2&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#login---level-4">Login - Level 4&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#crackmeexe---level-1">CRACKME.EXE - Level 1&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="challenges">Challenges&lt;/h2>
-&lt;h3 id="login---level-1">Login - Level 1&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: center">&lt;strong>Category&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Points&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Solves&lt;/strong>&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: center">Web&lt;/td>
- &lt;td style="text-align: center">26&lt;/td>
- &lt;td style="text-align: center">357&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h4 id="challenge-description">Challenge Description&lt;/h4>
-&lt;blockquote>
-&lt;p>So you fancy yourself a hacker? Me? I don&amp;rsquo;t even see the code!&lt;/p>
-&lt;p>&lt;a href="http://login-lvl1.hack.fe-ctf.dk/">Log in, get flag&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;h4 id="approach">Approach&lt;/h4>
-&lt;p>The application consists of a login page. We see immediately that we get an error &amp;ldquo;Invalid Password&amp;rdquo;.&lt;/p></description></item><item><title>TCP1P CTF 2023</title><link>https://blog.alright21.me/ctf/tcp1pctf/</link><pubDate>Tue, 17 Oct 2023 08:53:58 +0200</pubDate><guid>https://blog.alright21.me/ctf/tcp1pctf/</guid><description>&lt;p>Write-ups for &lt;a href="https://ctf.tcp1p.com/">TCP1P&lt;/a> CTF 2023.&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="#challenges">Challenges&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#intention">Intention&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="challenges">Challenges&lt;/h2>
-&lt;h3 id="intention">Intention&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: center">&lt;strong>Category&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Points&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Solves&lt;/strong>&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: center">Mobile&lt;/td>
- &lt;td style="text-align: center">356&lt;/td>
- &lt;td style="text-align: center">13&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;h4 id="challenge-description">Challenge Description&lt;/h4>
-&lt;figure style="margin-left: 0px;">
- &lt;img src="https://blog.alright21.me/assets/tcp1p_intention_description.png" alt="intention description" style="width:60%; float: left">
- &lt;figcaption>&lt;/figcaption>
-&lt;/figure>
-&lt;h4 id="approach">Approach&lt;/h4>
-&lt;p>The challenge presents an interesting setup compared to regular mobile challenges: we are asked to create a malicious app that exploits it inside an emulator, great idea!&lt;/p>
-&lt;p>The application has two activities: MainActivity, where nothing happens, and a FlagSender, where the content of &lt;code>flag.txt&lt;/code> file is set as an intent result and sent back to the caller. The AndroidManifest.xml also suggests what should be the approach of exploiting this challenge: FlagSender activity is exported, so we are able to start it from an external application, and retrieve the intent result (set with &lt;code>setResult(-1, getIntent().putExtra(&amp;quot;flag&amp;quot;, flag));&lt;/code>). We have everything we need in theory, but we need to create a malicious application to install in the emulator in order to exploit it.&lt;/p></description></item><item><title>SrdnlenCTF</title><link>https://blog.alright21.me/ctf/srdnlenctf/</link><pubDate>Wed, 12 Oct 2022 23:08:58 +0200</pubDate><guid>https://blog.alright21.me/ctf/srdnlenctf/</guid><description>&lt;p>Writeups for &lt;a href="https://ctf.srdnlen.it/">srdnlenCTF&lt;/a>&lt;/p>
-&lt;h2 id="categories">Categories&lt;/h2>
-&lt;p>&lt;strong>Web&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="#categories">Categories&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#challenges">Challenges&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#i-love-pickles">I love pickles&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="challenges">Challenges&lt;/h2>
-&lt;h3 id="i-love-pickles">I love pickles&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: center">&lt;strong>Category&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Points&lt;/strong>&lt;/th>
- &lt;th style="text-align: center">&lt;strong>Solves&lt;/strong>&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: center">Web&lt;/td>
- &lt;td style="text-align: center">50&lt;/td>
- &lt;td style="text-align: center">51&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;p>&lt;strong>Challenge Description&lt;/strong>: My Sardinian friend says she hates &amp;ldquo;su cugumere cunfettau&amp;rdquo;, but I love them, on top of my burger and in my code.&lt;/p>
-&lt;p>If you really know your pickles you can enter in my admin area.&lt;/p>
-&lt;p>Website: &lt;a href="http://ilovepickles.challs.srdnlen.it/">http://ilovepickles.challs.srdnlen.it&lt;/a>&lt;/p>
-&lt;h4 id="approach">Approach&lt;/h4>
-&lt;p>As the name of the challenge suggests, the application should use the &lt;code>pickle&lt;/code> library to encode and decode the cookies (I found out about this library while I was playing the sekaiCTF, but I didn&amp;rsquo;t solve the challenge there). It uses method &lt;code>loads&lt;/code> to decode a cookie string and &lt;code>dumps&lt;/code> to encode it back. The cookie is also base64 encoded.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ctf on Alberto Giust</title><link>https://blog.alright21.me/categories/ctf/</link><description>Recent content in Ctf on Alberto Giust</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 07 Dec 2023 07:00:00 +0200</lastBuildDate><atom:link href="https://blog.alright21.me/categories/ctf/index.xml" rel="self" type="application/rss+xml"/><item><title>hpAndro Mobile CTF</title><link>https://blog.alright21.me/ctf/mobile_hpandro/</link><pubDate>Thu, 07 Dec 2023 07:00:00 +0200</pubDate><guid>https://blog.alright21.me/ctf/mobile_hpandro/</guid><description>&lt;p&gt;Hello everyone! In this blog post, I will explain how I solved some challenges in &lt;a href="https://ctf.hpandro.raviramesh.info/"&gt;hpAndro&lt;/a&gt; mobile CTF. I am trying to learn mobile security, and this mobile app helped me to improve my skills, especially on what concern dynamic analysis. I will update this article in the future, so keep an eye on that! Furthermore, I suggest you to try these challenges first on your own, but do not hesitate to look for the solutions if you need it:) And if you have a better solution, feel free to contact me and I will be happy to learn from you!&lt;/p&gt;</description></item><item><title>FE CTF 2023</title><link>https://blog.alright21.me/ctf/fe_ctf_2023/</link><pubDate>Mon, 30 Oct 2023 08:58:25 +0200</pubDate><guid>https://blog.alright21.me/ctf/fe_ctf_2023/</guid><description>&lt;p&gt;Write-ups for &lt;a href="https://play.fe-ctf.dk/"&gt;FE CTF 2023&lt;/a&gt;. This weekend I was quite busy, but I managed to solve some easy challenges in this CTF.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#challenges"&gt;Challenges&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#login---level-1"&gt;Login - Level 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#login---level-2"&gt;Login - Level 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#login---level-4"&gt;Login - Level 4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#crackmeexe---level-1"&gt;CRACKME.EXE - Level 1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="challenges"&gt;Challenges&lt;/h2&gt;
+&lt;h3 id="login---level-1"&gt;Login - Level 1&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Points&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Web&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;26&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;357&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id="challenge-description"&gt;Challenge Description&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;So you fancy yourself a hacker? Me? I don&amp;rsquo;t even see the code!&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://login-lvl1.hack.fe-ctf.dk/"&gt;Log in, get flag&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id="approach"&gt;Approach&lt;/h4&gt;
+&lt;p&gt;The application consists of a login page. We see immediately that we get an error &amp;ldquo;Invalid Password&amp;rdquo;.&lt;/p&gt;</description></item><item><title>TCP1P CTF 2023</title><link>https://blog.alright21.me/ctf/tcp1pctf/</link><pubDate>Tue, 17 Oct 2023 08:53:58 +0200</pubDate><guid>https://blog.alright21.me/ctf/tcp1pctf/</guid><description>&lt;p&gt;Write-ups for &lt;a href="https://ctf.tcp1p.com/"&gt;TCP1P&lt;/a&gt; CTF 2023.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#challenges"&gt;Challenges&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#intention"&gt;Intention&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="challenges"&gt;Challenges&lt;/h2&gt;
+&lt;h3 id="intention"&gt;Intention&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Points&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Mobile&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;356&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;13&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id="challenge-description"&gt;Challenge Description&lt;/h4&gt;
+&lt;figure style="margin-left: 0px;"&gt;
+ &lt;img src="https://blog.alright21.me/assets/tcp1p_intention_description.png" alt="intention description" style="width:60%; float: left"&gt;
+ &lt;figcaption&gt;&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h4 id="approach"&gt;Approach&lt;/h4&gt;
+&lt;p&gt;The challenge presents an interesting setup compared to regular mobile challenges: we are asked to create a malicious app that exploits it inside an emulator, great idea!&lt;/p&gt;
+&lt;p&gt;The application has two activities: MainActivity, where nothing happens, and a FlagSender, where the content of &lt;code&gt;flag.txt&lt;/code&gt; file is set as an intent result and sent back to the caller. The AndroidManifest.xml also suggests what should be the approach of exploiting this challenge: FlagSender activity is exported, so we are able to start it from an external application, and retrieve the intent result (set with &lt;code&gt;setResult(-1, getIntent().putExtra(&amp;quot;flag&amp;quot;, flag));&lt;/code&gt;). We have everything we need in theory, but we need to create a malicious application to install in the emulator in order to exploit it.&lt;/p&gt;</description></item><item><title>SrdnlenCTF</title><link>https://blog.alright21.me/ctf/srdnlenctf/</link><pubDate>Wed, 12 Oct 2022 23:08:58 +0200</pubDate><guid>https://blog.alright21.me/ctf/srdnlenctf/</guid><description>&lt;p&gt;Writeups for &lt;a href="https://ctf.srdnlen.it/"&gt;srdnlenCTF&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="categories"&gt;Categories&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Web&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#categories"&gt;Categories&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#challenges"&gt;Challenges&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#i-love-pickles"&gt;I love pickles&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="challenges"&gt;Challenges&lt;/h2&gt;
+&lt;h3 id="i-love-pickles"&gt;I love pickles&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Points&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;&lt;strong&gt;Solves&lt;/strong&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;Web&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;50&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;51&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Challenge Description&lt;/strong&gt;: My Sardinian friend says she hates &amp;ldquo;su cugumere cunfettau&amp;rdquo;, but I love them, on top of my burger and in my code.&lt;/p&gt;
+&lt;p&gt;If you really know your pickles you can enter in my admin area.&lt;/p&gt;
+&lt;p&gt;Website: &lt;a href="http://ilovepickles.challs.srdnlen.it/"&gt;http://ilovepickles.challs.srdnlen.it&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="approach"&gt;Approach&lt;/h4&gt;
+&lt;p&gt;As the name of the challenge suggests, the application should use the &lt;code&gt;pickle&lt;/code&gt; library to encode and decode the cookies (I found out about this library while I was playing the sekaiCTF, but I didn&amp;rsquo;t solve the challenge there). It uses method &lt;code&gt;loads&lt;/code&gt; to decode a cookie string and &lt;code&gt;dumps&lt;/code&gt; to encode it back. The cookie is also base64 encoded.&lt;/p&gt;</description></item></channel></rss>
