@@ -42,7 +42,7 @@ weight = 6
     showReadTime = true
 
     # Main Page
-    description = "Hi, I am Alberto Giust, aka `alright(21)?`, penetration tester at Spike Reply and security enthusiast. In this website you will find CTF writeups and other interesting things I want to document about my journey through the magical world of Cybersecurity."
+    description = "Hi, I am Alberto Giust, aka `alright(21)?`, Threat Intelligence Analyst at Cleafy. In this website you will find blog posts,  CTF writeups and other interesting things I want to document about my journey through the magical world of Cybersecurity."
     mainSections = ["security","ctf","education","dev"]
     showAllPostsOnHomePage = true
     tagsOverview = false
